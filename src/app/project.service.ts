@@ -13,5 +13,8 @@ export class ProjectService {
   getProjects() {
     return this.projects;
   }
+  getProjectByPopularity(){
+    // return this.projects.orderBy
+  }
 
 }

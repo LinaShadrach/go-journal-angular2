@@ -27,15 +27,15 @@
   </div><!--end of row 1-->
 </div>
 <div class="container-fluid">
-  <div *ngFor="let project of projects | async">
-  <div class="row row-content">
-    <img src={{project.photos[0]}}>
-    <div class="content-container">
-      <h2>{{project.title}}</h2>
-      <p>Tags <span class="hidden-xs">| <a href="#">{{project.tags[0]}}</a> <a href="#">{{project.tags[1]}}</a> <a href="#">{{project.tags[2]}}</a></span></p>
+  <div *ngFor="let project of popularProjects | async">
+    <div class="row row-content">
+      <img src={{project.photos[0]}}>
+      <div class="content-container">
+        <h2>{{project.popularity}}</h2>
+        <!-- <p>Tags <span class="hidden-xs">| <a href="#">{{project.tags[0]}}</a> <a href="#">{{project.tags[1]}}</a> <a href="#">{{project.tags[2]}}</a></span></p> -->
+      </div>
     </div>
   </div>
-</div>
 
   <div class="sidebar">
     <!--ADD SIDEBAR CONTENT HERE-->
