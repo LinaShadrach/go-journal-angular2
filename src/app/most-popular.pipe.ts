@@ -7,10 +7,9 @@ import { Project } from './project.model';
 export class MostPopularPipe implements PipeTransform {
 
   transform(input: Project[]){
+    var output: Project[]=[];
     if(input!==null)
     {
-      debugger;
-      var output: Project[]=[];
       var maxPop = 0;
       for(var i=0; i<input.length; i++){
         if(input[i].popularity>maxPop){
@@ -22,7 +21,7 @@ export class MostPopularPipe implements PipeTransform {
       }
       return output;
     }
-    else{
+    else {
       console.log("else if");
       return output;
     }

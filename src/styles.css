@@ -27,9 +27,9 @@ body {
 .container-fluid:first-child {
   background: white; /*navbar background color*/
 }
-.container-fluid:first-child img {
+#logo {
   margin-left: 10px;
-  max-width: 186px; /* logo size */
+  max-width: 186px;
 }
 .navbar-default .navbar-nav > .first > a {
   padding-right: 0px;
@@ -173,11 +173,17 @@ a.main-target  {
 .row .full-size {
   height: 688px;
   background: #000;
+  background: tomato;
 }
 .row .full-size img {
+  border: 2px solid tomato;
   height: 688px;
   max-width: 100%;
   object-fit: cover;
+}
+.col-lg-4.col-md-4.col-sm-12.col-xs-12 {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .row .half-size {
   height: 344px;

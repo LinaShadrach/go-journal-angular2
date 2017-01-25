@@ -1,11 +1,11 @@
 <div class="container-fluid">
   <div class="row top-row">
-    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 expanded full-size">
-      <img class="zoom" src="../assets/img/couch.jpg" alt="man sitting on couch with laptop">
-      <div class="text-container darkgrey floating" *ngFor="let project of projects | async">
-        <h2>{{project.title}}</h2>
-        <p>Holiday Mobile</p>
-        <h6>Store foot traffic surged on Black Friday.</h6>
+    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 expanded full-size" *ngFor="let project of popularProjects | async">
+      <img class="zoom" src={{project.photos[0]}} alt="man sitting on couch with laptop">
+      <div class="text-container darkgrey floating">
+        <h2 >{{project.title}}</h2>
+        <p>{{project.author}}</p>
+        <h6>{{project.tagLine}}</h6>
       </div>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 expanded">
@@ -27,12 +27,14 @@
   </div><!--end of row 1-->
 </div>
 <div class="container-fluid">
-  <div *ngFor="let project of popularProjects | async">
-    <div class="row row-content">
+  <div *ngFor="let project of projects | async">
+    <div class="row row-content" (click)="goToDetailPage(project)">
       <img src={{project.photos[0]}}>
       <div class="content-container">
-        <h2>{{project.popularity}}</h2>
-        <!-- <p>Tags <span class="hidden-xs">| <a href="#">{{project.tags[0]}}</a> <a href="#">{{project.tags[1]}}</a> <a href="#">{{project.tags[2]}}</a></span></p> -->
+        <h2>{{project.title}}</h2>
+        <h5>{{project.author}}</h5>
+        <h4>{{project.tagLine}}</h4>
+        <p>Tags <span class="hidden-xs">| <a href="#">{{project.tags[0]}}</a> <a href="#">{{project.tags[1]}}</a> <a href="#">{{project.tags[2]}}</a></span></p>
       </div>
     </div>
   </div>

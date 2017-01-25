@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <div class="row top-row">
+    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 expanded full-size">
+      <img src="{{(projectToDisplay | async)?.photos[0]}}" alt="">
+      <div class="text-container darkgrey floating">
+        <h2>{{(projectToDisplay | async)?.title}}</h2>
+        <p>{{(projectToDisplay | async)?.author}}</p>
+        <h6>{{(projectToDisplay | async)?.tagLine}}</h6>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 expanded">
+      <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12 expanded half-size">
+        <div class="text-container googleBlue">
+          <h5>{{(projectToDisplay | async)?.category}}</h5>
+          <p>{{(projectToDisplay | async)?.endDate}}</p>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12 expanded half-size">
+        <div class="text-container seagreen">
+          <h5>Progress: ${{(projectToDisplay | async)?.pledged}}/${{(projectToDisplay | async)?.goal}}</h5>
+        </div>
+      </div>
+    </div>
+  </div><!--end of row 1-->
+</div>
+<div class="container-fluid">
+  <div>
+    <div class="row row-content">
+      <div class="content-container">
+        <p>{{(projectToDisplay | async)?.description}}</p>
+        <h5></h5>
+        <h4></h4>
+        <p>Tags <span class="hidden-xs">| <a href="#">{{(projectToDisplay | async)?.tags[0]}}</a> <a href="#">{{(projectToDisplay | async)?.tags[1]}}</a> <a href="#">{{(projectToDisplay | async)?.tags[2]}}</a></span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <!--ADD SIDEBAR CONTENT HERE-->
+  </div>
+
+</div><!--end of container-fluid-->
+<div class="container-fluid">
+  <div class="row footer">
+    <div class="footer-container">
+      <h3>Get Our Newsletter: Put Google research and insight behind your thinking</h3>
+      <button type="button" class="btn btn-primary">Subscribe</button>
+    </div>
+  </div><!--end of footer-->
+</div><!--end of last container-fluid-->
