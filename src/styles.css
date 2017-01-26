@@ -33,6 +33,14 @@ body {
   border-radius: 0;
   margin-bottom: 0;
 }
+.navbar-brand {
+  margin-top: 5px;
+}
+.navbar-default a.navbar-brand {
+  color: #0D47A1; /*brand color*/
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.4em;
+}
 .container-fluid:first-child {
   background: none; /*navbar background color*/
 }
