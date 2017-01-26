@@ -1,3 +1,32 @@
-<p>
-  new-backer works!
-</p>
+<div class="container-fluid">
+  <h2>Back Project: {{(projectToBack|async)?.title}}</h2>
+  <form>
+  <div class="form-group">
+    <label for="name">Full Name:</label>
+    <input type="text" class="form-control" #name placeholder="Enter your name">
+    <small id="nameHelp" class="form-text text-muted">We'll never share your private information with anyone.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleSelect2">Select Pledge Amount</label>
+    <select #pledge multiple class="form-control" id="exampleSelect2">
+      <option value=50>$50</option>
+      <option value=100>$100</option>
+      <option value=150>$150</option>
+      <option value=200>$200</option>
+      <option value=300>$300</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Upload Photo</label>
+    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+    <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input">
+      Add me to your email list
+    </label>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="submitPledge(name.value, pledge.value); name.value=''; pledge.value=''">Submit</button>
+</form>
+</div>
