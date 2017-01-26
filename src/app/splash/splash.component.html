@@ -34,7 +34,9 @@
         <h2>{{project.title}}</h2>
         <h5>{{project.author}}</h5>
         <h4>{{project.tagLine}}</h4>
-        <p>Tags <span class="hidden-xs">| <a href="#">{{project.tags[0]}}</a> <a href="#">{{project.tags[1]}}</a> <a href="#">{{project.tags[2]}}</a></span></p>
+        <p>Tags <span class="hidden-xs">
+          <span *ngFor="let tag of project.tags">| <a href="#">{{tag}}</a> </span>
+        </span></p>
       </div>
     </div>
   </div>

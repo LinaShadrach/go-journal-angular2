@@ -13,14 +13,13 @@ body {
 .container-fluid {
   max-width: 1400px;
   margin: 0;
-  /*background: white;*/
   margin-left: auto;
   margin-right: auto;
 }
 
 .container-fluid:nth-of-type(2) {
   position: relative;
-  border-left: 1px solid #F5F5F5;
+  border-left: 3px solid #F5F5F5;
 }
 /* ------------------------------Navbar Styling------------------------------ */
 .navbar {
@@ -299,6 +298,7 @@ body {
   position: relative;
   background: #263238;
   height: 72px;
+  /*max-width: 1400px;*/
 }
 .last-footer img {
   position: absolute;
