@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <h2>Edit Project: {{(projectToBack|async)?.title}}</h2>
+  <form>
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input #title type="text" class="form-control" value="{{(projectToEdit | async)?.title}}">
+    </div>
+
+    <div class="form-group">
+      <label for="category">Select Pledge Amount</label>
+      <select #category value="{{(projectToEdit | async)?.category}}" multiple class="form-control" id="exampleSelect2">
+        <option value="film">film</option>
+        <option value="photography">photography</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="author">Author:</label>
+      <input #author type="text" class="form-control" value="{{(projectToEdit | async)?.author}}">
+    </div>
+
+    <div class="form-group">
+      <label for="image">File input</label>
+      <input #image type="file" class="form-control-file" value="{{(projectToEdit | async)?.image}}" aria-describedby="fileHelp">
+    </div>
+
+    <div class="form-group">
+      <label for="tagLine">Tag Line:</label>
+      <input #tagLine type="text" class="form-control" value="{{(projectToEdit | async)?.tagLine}}">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <input #description type="text" class="form-control" value="{{(projectToEdit | async)?.description}}">
+    </div>
+
+    <div class="form-group">
+      <label for="goal">Goal:</label>
+      <input #goal type="number" class="form-control" value="{{(projectToEdit | async)?.goal}}">
+    </div>
+
+    <div class="form-group">
+      <label for="endDate">End Date:</label>
+      <input #endDate type="date" class="form-control" value="{{(projectToEdit | async)?.endDate}}">
+    </div>
+
+    <div class="form-group">
+      <label for="destination">Destination: </label>
+      <input #destination type="text" class="form-control" value="{{(projectToEdit | async)?.destination}}">
+    </div>
+
+    <div class="form-group">
+      <label for="rewards">Rewards for Backers: </label>
+      <input #rewards type="text" class="form-control" value="{{(projectToEdit | async)?.rewards}}">
+    </div>
+
+    <div class="form-group">
+      <label for="tags">Tags: </label>
+      <input #tags type="text" class="form-control" value="{{(projectToEdit | async)?.tags}}">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="submitEdit(title.value, author.value, category.value, tagLine.value, description.value, goal.value, endDate.value, destination.value, rewards.value, tags.value, image.value); title.value=''; author.value=''; category.value=''; tagLine.value=''; description.value=''; goal.value=''; endDate.value=''; destination.value=''; rewards.value=''; tags.value=''; image.value=''">Edit</button>
+  </form>
+</div>

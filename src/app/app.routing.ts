@@ -4,6 +4,7 @@ import { SplashComponent } from './splash/splash.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { NewProjectComponent } from './new-project/new-project.component';
 import { NewBackerComponent } from './new-backer/new-backer.component';
+import { EditProjectComponent } from './edit-project/edit-project.component';
 
 const appRoutes: Routes = [
   {
@@ -21,6 +22,10 @@ const appRoutes: Routes = [
   {
     path: ':id/new-backer',
     component: NewBackerComponent
+  },
+  {
+    path: ':id/edit-project',
+    component: EditProjectComponent
   }
 ];
 

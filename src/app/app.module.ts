@@ -14,6 +14,7 @@ import { MostPopularPipe } from './most-popular.pipe';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { NewProjectComponent } from './new-project/new-project.component';
 import { NewBackerComponent } from './new-backer/new-backer.component';
+import { EditProjectComponent } from './edit-project/edit-project.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -29,7 +30,8 @@ export const firebaseConfig = {
     MostPopularPipe,
     ProjectDetailComponent,
     NewProjectComponent,
-    NewBackerComponent
+    NewBackerComponent,
+    EditProjectComponent
   ],
   imports: [
     BrowserModule,

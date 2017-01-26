@@ -25,7 +25,9 @@ export class ProjectDetailComponent implements OnInit {
   }
   addNewBacker() {
     this.router.navigate([this.projectId, 'new-backer']);
-
+  }
+  goToEditPage() {
+    this.router.navigate([this.projectId, 'edit-project']);
   }
 
 }
