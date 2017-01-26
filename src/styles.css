@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   background-color: #E0E0E0;
   font-family: 'Roboto', sans-serif;
@@ -176,10 +181,9 @@ a.main-target  {
   background: tomato;
 }
 .row .full-size img {
-  border: 2px solid tomato;
   height: 688px;
   max-width: 100%;
-  object-fit: cover;
+  border: 2px solid teal;
 }
 .col-lg-4.col-md-4.col-sm-12.col-xs-12 {
   padding-left: 0px;
@@ -256,8 +260,8 @@ a.main-target  {
   height: 300px;
   left: 30px;
   bottom: 30px;
-  padding-left: 35px;
-  padding-right: 35px;
+  /*padding-left: 35px;*/
+  /*padding-right: 35px;*/
 }
 .content-container {
   padding-top: 1%;
