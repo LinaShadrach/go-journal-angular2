@@ -25,7 +25,7 @@ export class EditProjectComponent implements OnInit {
 
     var rewards = reward.split(',');
     var tags = tag.split(',');
-    var photos = ["http://www.medievalarchives.com/wp-content/uploads/2011/07/15castle_france_fr6.jpg"];
+    var photos = [photo];
     var tempProject = new Project(title, author, category, tagLine, description, goal, endDate, destination, rewards, tags, photos)
     this.projectService.editProject(tempProject, this.projectId);
     this.router.navigate(['projects', this.projectId]);

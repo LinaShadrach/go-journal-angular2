@@ -15,6 +15,7 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
 import { NewProjectComponent } from './new-project/new-project.component';
 import { NewBackerComponent } from './new-backer/new-backer.component';
 import { EditProjectComponent } from './edit-project/edit-project.component';
+import { ListDisplayPipe } from './list-display.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -31,7 +32,8 @@ export const firebaseConfig = {
     ProjectDetailComponent,
     NewProjectComponent,
     NewBackerComponent,
-    EditProjectComponent
+    EditProjectComponent,
+    ListDisplayPipe
   ],
   imports: [
     BrowserModule,

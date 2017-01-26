@@ -14,7 +14,7 @@ export class NewBackerComponent implements OnInit {
   projectId: string;
   projectToBack;
 
-  constructor(private projectService: ProjectService, private route: ActivatedRoute, private location: Location) { }
+  constructor(private router: Router, private projectService: ProjectService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
@@ -25,6 +25,7 @@ export class NewBackerComponent implements OnInit {
 
   submitPledge(name:string, pledge: number) {
     var oldAmount = this.projectService.getProjectBackers(this.projectId, name, pledge);
+    this.router.navigate(['projects', this.projectId]);
 
   }
 

@@ -9,12 +9,12 @@ export class ProjectService {
   popularProjects: FirebaseListObservable<any[]>;
   projectBackers: FirebaseListObservable<any[]>;
   oldAmount;
+  unwantedKey;
 
   constructor(private angularFire: AngularFire) {
     this.projects = angularFire.database.list('projects');
     this.mostPopularProjects = this.angularFire.database.list('/projects/', {query: {orderByChild: "popularity", limitToLast: 1}});
-    this.popularProjects = this.angularFire.database.list('/projects/', {query: {orderByChild: "popularity", limitToLast: 3, limitToFirst:2}});
-    this.popularProjects = this.popularProjects.take(2);
+    this.popularProjects = this.angularFire.database.list('/projects/', {query: {orderByChild: "pledged", limitToFirst:2}});
   }
 
   getProjectById(projectId: string) {
@@ -22,7 +22,8 @@ export class ProjectService {
   }
 
   getPopularProjects(){
-    this.popularProjects.subscribe(data=> {console.log(data)});
+    this.popularProjects.subscribe(data=> {
+    });
     return this.popularProjects;
   }
 
@@ -65,6 +66,15 @@ export class ProjectService {
       tags: projectToEdit.tags,
     });
   }
+  getUnwantedKeys(){
+    var newKey;
+    var unwantedKeys = this.angularFire.database.list('/projects/', {query: {orderByChild: "popularity", limitToLast: 1}}).subscribe(data => {
+      newKey = data[0].$key;
+      console.log(newKey);
 
+    });
+
+    console.log("Outside of subscribe "+ newKey);
+  }
 
 }

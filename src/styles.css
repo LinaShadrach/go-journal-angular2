@@ -21,6 +21,9 @@ body {
   position: relative;
   border-left: 3px solid #F5F5F5;
 }
+.container-fluid:nth-of-type(2).last {
+  border-left: none;
+}
 /* ------------------------------Navbar Styling------------------------------ */
 .navbar {
   padding: 0px;
@@ -38,7 +41,7 @@ body {
 .navbar-default a.navbar-brand {
   color: #0D47A1; /*brand color*/
   font-family: 'Raleway', sans-serif;
-  font-size: 1.4em;
+  font-size: 2em;
 }
 .container-fluid:first-child {
   background: none; /*navbar background color*/
@@ -278,6 +281,10 @@ body {
 .content-container a {
   color: #2196F5;
 }
+.content-container.description {
+  padding: 40px;
+  width: 60%;
+}
 /* ------------------------------Footer Styling------------------------------ */
 .footer {
   background: #37474F;
@@ -326,6 +333,7 @@ body {
 /* ------------------------------Sidebar Styling------------------------------ */
 .sidebar {
   position: absolute;
+  padding: 20px;
   top: 3%;
   right: 0px;
   background: #F5F5F5;
@@ -340,7 +348,7 @@ body {
   .row .full-size img {
     height: 412.8px;
     width: 100%;
-    object-fit: cover;
+    object-fit: cover !important;
     object-position: top;
   }
   .row .half-size {
@@ -362,6 +370,9 @@ body {
   .content-container {
     padding-top: 0;
     width: 60%;
+  }
+  .content-container.description {
+    width: 100%;
   }
   .sidebar {
     display: none;

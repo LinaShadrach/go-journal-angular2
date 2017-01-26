@@ -4,22 +4,22 @@
       <img src="{{(projectToDisplay | async)?.photos[0]}}" alt="">
       <div class="text-container darkgrey floating">
         <h2>{{(projectToDisplay | async)?.title}}</h2>
-        <p>{{(projectToDisplay | async)?.author}}</p>
-        <h6>{{(projectToDisplay | async)?.tagLine}}</h6>
+        <p>By: {{(projectToDisplay | async)?.author}}</p>
+        <h4>{{(projectToDisplay | async)?.tagLine}}</h4>
       </div>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 expanded">
       <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12 expanded half-size">
         <div class="text-container googleBlue">
-          <h5>{{(projectToDisplay | async)?.category}}</h5>
-          <p>End Date: {{(projectToDisplay | async)?.endDate}}</p>
+          <h5>Category: {{(projectToDisplay | async)?.category}}</h5>
+          <h4>End Date: {{(projectToDisplay | async)?.endDate}}</h4>
           <button (click)="goToEditPage()" class="btn btn-info">Update Project</button>
         </div>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12 expanded half-size">
         <div class="text-container seagreen">
           <h5>Progress: ${{(projectToDisplay | async)?.pledged}}/${{(projectToDisplay | async)?.goal}}</h5>
-          <h5 *ngIf="(projectToDisplay | async)?.backers">{{(projectToDisplay | async)?.backers.length}} backers</h5>
+          <h5 *ngIf="((projectToDisplay | async)?.backers)">{{(projectToDisplay | async)?.backers.length}} backers</h5>
           <h5 *ngIf="!((projectToDisplay | async)?.backers)"> 0 backers</h5>
           <button class="btn btn-success"(click)="addNewBacker()">Back Project</button>
         </div>
@@ -30,17 +30,26 @@
 <div class="container-fluid">
   <div>
     <div class="row row-content">
-      <div class="content-container">
+      <div class="content-container description">
+        <h3>Project Description:</h3>
         <p>{{(projectToDisplay | async)?.description}}</p>
         <h5></h5>
         <h4></h4>
-        <p>Tags <span class="hidden-xs">| <a href="#">{{(projectToDisplay | async)?.tags[0]}}</a> <a href="#">{{(projectToDisplay | async)?.tags[1]}}</a> <a href="#">{{(projectToDisplay | async)?.tags[2]}}</a></span></p>
+        <p>Tags <span class="hidden-xs">
+          <span *ngFor='let tag of (projectToDisplay | async)?.tags'>|
+            <a href="#">{{tag}}</a>
+          </span>
+        </span></p>
       </div>
     </div>
   </div>
 
   <div class="sidebar">
-    <!--ADD SIDEBAR CONTENT HERE-->
+    <h3>Rewards:</h3>
+    <hr>
+    <div *ngFor="let reward of (projectToDisplay | async)?.rewards">
+      <h5>{{reward}}</h5>
+    </div>
   </div>
 
 </div><!--end of container-fluid-->

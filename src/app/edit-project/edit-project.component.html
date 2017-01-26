@@ -7,8 +7,8 @@
     </div>
 
     <div class="form-group">
-      <label for="category">Select Pledge Amount</label>
-      <select #category value="{{(projectToEdit | async)?.category}}" multiple class="form-control" id="exampleSelect2">
+      <label for="category">Select Category:</label>
+      <select #category value="{{(projectToEdit | async)?.category}}" class="form-control" id="exampleSelect2">
         <option value="film">film</option>
         <option value="photography">photography</option>
       </select>
@@ -20,8 +20,8 @@
     </div>
 
     <div class="form-group">
-      <label for="image">File input</label>
-      <input #image type="file" class="form-control-file" value="{{(projectToEdit | async)?.image}}" aria-describedby="fileHelp">
+      <label for="image">Image File URL</label>
+      <input #image class="form-control" value="{{(projectToEdit | async)?.photos[0]}}">
     </div>
 
     <div class="form-group">
