@@ -13,6 +13,7 @@ import { routing } from './app.routing';
 import { MostPopularPipe } from './most-popular.pipe';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { NewProjectComponent } from './new-project/new-project.component';
+import { NewBackerComponent } from './new-backer/new-backer.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -27,7 +28,8 @@ export const firebaseConfig = {
     SplashComponent,
     MostPopularPipe,
     ProjectDetailComponent,
-    NewProjectComponent
+    NewProjectComponent,
+    NewBackerComponent
   ],
   imports: [
     BrowserModule,

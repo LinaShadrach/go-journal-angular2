@@ -20,6 +20,7 @@
           <h5>Progress: ${{(projectToDisplay | async)?.pledged}}/${{(projectToDisplay | async)?.goal}}</h5>
           <h5 *ngIf="(projectToDisplay | async)?.backers">{{(projectToDisplay | async)?.backers.length}} backers</h5>
           <h5 *ngIf="!((projectToDisplay | async)?.backers)"> 0 backers</h5>
+          <button class="btn btn-success"(click)="addNewBacker()">Back Project</button>
         </div>
       </div>
     </div>
