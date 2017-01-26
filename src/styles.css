@@ -2,6 +2,8 @@
 * {
   margin: 0;
   padding: 0;
+  padding-left: 0;
+  padding-right: 0;
   box-sizing: border-box;
 }
 body {
@@ -9,32 +11,30 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 .container-fluid {
-  max-width: 1440px;
+  max-width: 1400px;
   margin: 0;
-  background: white;
+  /*background: white;*/
   margin-left: auto;
   margin-right: auto;
 }
+
 .container-fluid:nth-of-type(2) {
   position: relative;
+  border-left: 1px solid #F5F5F5;
 }
 /* ------------------------------Navbar Styling------------------------------ */
 .navbar {
   padding: 0px;
   height: 64px; /* height of navbar */
   background: #FFF;
-  max-width: 1440px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 0;
   margin-bottom: 0;
 }
 .container-fluid:first-child {
-  background: white; /*navbar background color*/
-}
-#logo {
-  margin-left: 10px;
-  max-width: 186px;
+  background: none; /*navbar background color*/
 }
 .navbar-default .navbar-nav > .first > a {
   padding-right: 0px;
@@ -90,10 +90,6 @@ body {
 .dropdown-menu:hover {
   display: block;
 }
-a.main-target  {
-  background: white;
-}
-
 .dropdown-menu a {
   display: block;
 }
@@ -178,17 +174,12 @@ a.main-target  {
 .row .full-size {
   height: 688px;
   background: #000;
-  background: tomato;
 }
 .row .full-size img {
   height: 688px;
   max-width: 100%;
-  border: 2px solid teal;
 }
-.col-lg-4.col-md-4.col-sm-12.col-xs-12 {
-  padding-left: 0px;
-  padding-right: 0px;
-}
+
 .row .half-size {
   height: 344px;
 }
@@ -207,11 +198,13 @@ a.main-target  {
 }
 .expanded {
   margin: 0;
-  padding: 0;
+  padding: 0 !important;
   overflow: hidden;
 }
 .row-content img {
   width: 25%;
+  height: 200px;
+  object-fit: cover;
   margin: 1% 2%;
   float: left;
 }
@@ -365,6 +358,11 @@ a.main-target  {
   .sidebar {
     display: none;
   }
+  .row-content img {
+    width: 30%;
+    height: 25%;
+    object-fit: cover;
+  }
 }
 @media screen and (max-width: 767px) {
   .text-container h5 {
@@ -427,6 +425,8 @@ a.main-target  {
   }
   .row-content img {
     width: 30%;
+    height: 30%;
+    object-fit: cover;
   }
 }
 @media screen and (max-width: 425px) {
