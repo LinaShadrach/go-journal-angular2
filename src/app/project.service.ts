@@ -5,16 +5,25 @@ import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'a
 @Injectable()
 export class ProjectService {
   projects: FirebaseListObservable<any[]>;
+  mostPopularProjects: FirebaseListObservable<any[]>;
   popularProjects: FirebaseListObservable<any[]>;
   projectBackers: FirebaseListObservable<any[]>;
   oldAmount;
+
   constructor(private angularFire: AngularFire) {
     this.projects = angularFire.database.list('projects');
-    this.popularProjects = this.angularFire.database.list('/projects/', {query: {orderByChild: "popularity", limitToLast: 1}});
+    this.mostPopularProjects = this.angularFire.database.list('/projects/', {query: {orderByChild: "popularity", limitToLast: 1}});
+    this.popularProjects = this.angularFire.database.list('/projects/', {query: {orderByChild: "popularity", limitToLast: 3, limitToFirst:2}});
+    this.popularProjects = this.popularProjects.take(2);
   }
 
   getProjectById(projectId: string) {
     return this.angularFire.database.object('/projects/' + projectId);
+  }
+
+  getPopularProjects(){
+    this.popularProjects.subscribe(data=> {console.log(data)});
+    return this.popularProjects;
   }
 
   getProjectBackers(projectId: string, name: string, pledge){
@@ -35,7 +44,7 @@ export class ProjectService {
     this.projects.push(newProject);
   }
   getMostPopularProject(){
-    return this.popularProjects;
+    return this.mostPopularProjects;
   }
   deleteProject(id: string) {
     var projectEntryInFB = this.getProjectById(id);

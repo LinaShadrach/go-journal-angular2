@@ -13,13 +13,14 @@ import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'a
 })
 export class SplashComponent implements OnInit {
   projects: FirebaseListObservable<any[]>;
+  mostPopularProject: FirebaseListObservable<any[]>;
   popularProjects: FirebaseListObservable<any[]>;
-
   constructor(private router: Router, private projectService: ProjectService, private af: AngularFire) { }
 
   ngOnInit() {
     this.projects = this.projectService.getProjects();
-    this.popularProjects = this.projectService.getMostPopularProject();
+    this.mostPopularProject = this.projectService.getMostPopularProject();
+    this.popularProjects = this.projectService.getPopularProjects();
   }
   goToDetailPage(clickedProject) {
     this.router.navigate(['projects', clickedProject.$key]);

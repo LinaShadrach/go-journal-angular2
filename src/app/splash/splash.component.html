@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row top-row">
-    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 expanded full-size" *ngFor="let project of popularProjects | async">
+    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 expanded full-size" *ngFor="let project of mostPopularProject | async">
       <img class="zoom" src={{project.photos[0]}} alt="man sitting on couch with laptop">
       <div class="text-container darkgrey floating">
         <h2 >{{project.title}}</h2>
@@ -9,18 +9,11 @@
       </div>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 expanded">
-      <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12 expanded half-size">
-        <img class="zoom" src="../assets/img/laptop.jpg" alt="woman on phone and laptop">
+      <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12 expanded half-size" *ngFor="let project of popularProjects | async">
+        <img class="zoom" src={{project.photos[0]}} alt="woman on phone and laptop">
         <div class="text-container googleBlue">
-          <h5>Measurement: The Secret to Growth in a Mobile-First World</h5>
-          <p>Mobile Measurement</p>
-        </div>
-      </div>
-      <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12 expanded half-size">
-        <img class="zoom" src="../assets/img/people.jpg" alt="woman on phone and laptop">
-        <div class="text-container seagreen">
-          <h5>4 Media-Planning Tips for Online Video Advertising Success</h5>
-          <p>Advertising Video</p>
+          <h5>{{project.title}}</h5>
+          <p>{{project.tagLine}}</p>
         </div>
       </div>
     </div>
