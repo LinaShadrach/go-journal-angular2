@@ -15,6 +15,9 @@ export class ProjectService {
   getProjects() {
     return this.projects;
   }
+  addProject(newProject: Project) {
+    this.projects.push(newProject);
+  }
   getMostPopularProject(){
     return this.popularProjects;
   }

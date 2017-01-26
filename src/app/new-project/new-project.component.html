@@ -1,0 +1,73 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add New Project</h3>
+  </div>
+  <div class="panel-body">
+    <div>
+      <div>
+        <label>Project title:</label>
+        <br>
+        <input #title>
+      </div>
+
+      <div>
+        <label>author:</label>
+        <br>
+        <input #author>
+      </div>
+      <div>
+        <label>Main Image URL:</label>
+        <br>
+        <input #image>
+      </div>
+      <div>
+        <label>description:</label>
+        <br>
+        <select #category>
+          <option value="photography">photography</option>
+          <option value="film">film</option>
+        </select>
+      </div>
+
+      <div>
+        <label>tag line:</label>
+        <br>
+        <input #tagLine>
+      </div>
+
+      <div>
+        <label>Project description:</label>
+        <br>
+        <textarea #description></textarea>
+      </div>
+
+      <div>
+        <label>goal:</label>
+        <br>
+        <input #goal type="number">
+      </div>
+
+      <div>
+        <label>Ending Date:</label>
+        <br>
+        <input #endDate type="date">
+      </div>
+      <div>
+        <label>destination:</label>
+        <br>
+        <textarea #destination></textarea>
+      </div>
+      <div>
+        <label>reward for backers:</label>
+        <br>
+        <input #rewards>
+      </div>
+      <div>
+        <label>tags: </label>
+        <br>
+        <input #tags>
+      </div>
+    </div>
+  <button type="button" (click)="submitForm(title.value, author.value, category.value, tagLine.value, description.value, goal.value, endDate.value, destination.value, rewards.value, tags.value, image.value); title.value=''; author.value=''; category.value=''; tagLine.value=''; description.value=''; goal.value=''; endDate.value=''; destination.value=''; rewards.value=''; tags.value=''; image.value=''">Add</button>
+</div>
+</div>
