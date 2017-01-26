@@ -37,6 +37,10 @@ export class ProjectService {
   getMostPopularProject(){
     return this.popularProjects;
   }
+  deleteProject(id: string) {
+    var projectEntryInFB = this.getProjectById(id);
+    projectEntryInFB.remove();
+  }
   editProject(projectToEdit: Project, key: string){
     var selectedProject = this.getProjectById(key);
     selectedProject.update({author: projectToEdit.author,

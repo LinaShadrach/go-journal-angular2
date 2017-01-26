@@ -30,5 +30,11 @@ export class EditProjectComponent implements OnInit {
     this.projectService.editProject(tempProject, this.projectId);
     this.router.navigate(['projects', this.projectId]);
   }
+  deleteProject() {
+    if(confirm("Are you sure you want to delete this project?")) {
+      this.projectService.deleteProject(this.projectId);
+      this.router.navigate(['']);
+    }
+  }
 
 }
