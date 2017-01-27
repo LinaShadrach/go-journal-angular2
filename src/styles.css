@@ -199,13 +199,13 @@ body {
 .row .half-size:nth-of-type(2) {
   background: #009688;
 }
-.row .half-size img {
-  height: 70%;
+/*.row .half-size img {
+  height: 100%;
   width: 100%;
   margin-right: 0;
-  object-fit: cover;
+  object-fit: contain;
   object-position: right;
-}
+}*/
 .expanded {
   margin: 0;
   padding: 0 !important;

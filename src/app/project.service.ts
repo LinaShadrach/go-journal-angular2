@@ -7,7 +7,7 @@ export class ProjectService {
   projects: FirebaseListObservable<any[]>;
   mostPopularProjects: FirebaseListObservable<any[]>;
   popularProjects: FirebaseListObservable<any[]>;
-  projectBackers: FirebaseListObservable<any[]>;
+  projectBackers;
   oldAmount;
   unwantedKey;
 
@@ -28,8 +28,9 @@ export class ProjectService {
   }
 
   getProjectBackers(projectId: string, name: string, pledge){
-    this.projectBackers= this.angularFire.database.list('/projects/' + projectId + '/backers');
+    this.projectBackers= this.angularFire.database.list('/projects/' + projectId + '/backers/');
     this.projectBackers.push(name);
+
     var selectedProject = this.getProjectById(projectId);
     var updatedPledge = this.angularFire.database.object('/projects/' + projectId + '/pledged/').subscribe(data => {
       this.oldAmount = data.$value;
