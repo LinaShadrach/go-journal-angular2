@@ -189,6 +189,7 @@ body {
   height: 688px;
   max-width: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .row .half-size {

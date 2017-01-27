@@ -24,7 +24,9 @@ export class ProjectDetailComponent implements OnInit {
     });
     this.projectToDisplay = this.projectService.getProjectById(this.projectId);
     this.projectToDisplay.subscribe(data=>{
-      this.backersCount = Object.keys(data.backers).length;
+      if(data.backers){
+        this.backersCount = Object.keys(data.backers).length;
+      }
     });
   }
   addNewBacker() {
